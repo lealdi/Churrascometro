@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;        
+}
+
+body{
+      background-color: rgba(77, 44, 36, 0.966);
+}
+
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 700px;
+    height: 550px;
+    margin: 2rem auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url("/images/barbecue.jpg");
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    text-align: center;
+}
+
+.container h1{
+    color: aliceblue;
+    font-size: 3rem;
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container button{    
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.45rem;
+    display: inline-block;    
+    width: 50%;
+    height: 3rem;
+    margin-top: 20px;
+    background-color: brown;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.container button:active{
+    transform: scale(0.9);
+}
+
+input{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container .peoples{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("/images/fans.png");
+}
+
+footer{
+    font-family: 'Architects Daughter', cursive;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container #resultado p{
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Architects Daughter', cursive;
+    color: white;
+}
