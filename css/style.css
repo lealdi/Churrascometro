@@ -16,7 +16,7 @@ body{
     background-color: aliceblue;
     padding: 20px;
     border-radius: 10px;
-    background-image: url("/images/barbecue.jpg");
+    background-image: url("../images/barbecue.jpg");
     background-position-y: center;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -65,7 +65,7 @@ input{
     margin-bottom: 10px;
     background-size: 100% 100%;
     background-position: center;
-    background-image: url("/images/fans.png");
+    background-image: url("../images/fans.png");
 }
 
 footer{
