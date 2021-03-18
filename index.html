@@ -17,12 +17,17 @@
     <div class="container">
         <h1>Churrascômetro</h1>
         <div class="peoples"></div>
-        <input id="adultos" name="adultos" type="number" placeholder="Adultos">
-        <input id="criancas" name="criancas" type="number" placeholder="Crianças">
-        <input id="duracao" name="duracao" type="number" placeholder="Duração (h)">
+
+        <div class="flex-container">
+            <div class="icons"><img src="./images/men.png" alt=""><input id="men" name="men" type="number" placeholder="Homens"></div>
+            <div class="icons"><img src="./images/woman.png" alt=""><input id="woman" name="woman" type="number" placeholder="Mulheres"></div>
+            <div class="icons"><img src="./images/children.png" alt=""><input id="children" name="children" type="number" placeholder="Crianças"></div>
+            <div class="icons"><img src="./images/timer.png" alt=""><input id="timer" name="duracao" type="number" placeholder="Duração (h)"></div>
+        </div><!--flex-container-->
+
         <button onclick="calcular()">Calcular</button>
 
-        <div id="resultado"></div>        
+        <div id="result"></div>        
     </div>
 
     <footer>
