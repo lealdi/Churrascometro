@@ -1,8 +1,10 @@
-// Carne - 400 gr por mulher e 700 gr por homem  + de 6 horas - 700gr por mulher e 1kg por homem
-// Cerveja - 1500 ml por pessoa + 6 horas - 2500 ml
-// Refrigerante/agua - 1000 ml por pessoa + 6 horas 1500 ml
+//Homens comem 700 gr e + de 6 horas 1.400 gr.  Bebem 1500ml de Cerveja e + de 6 horas 2500ml. Bebem 600ml de bebidas não alcoolicas e 
+// + de 6 horas 1200ml 
 
-//Crianças valem por 0,5
+//Mulheres comem 400 gr e + de 6 horas 800gr. Bebem 1200ml de Cerveja e + de 6 horas 1800ml. Bebem 450ml de bebidas não alcoolicas e 
+// + de 6 horas 750ml 
+
+//Crianças comem 300gr e + de 6horas 500gr. Crianças bebem 700ml de bebidas não alcoolicas e + de 6horas 1500ml
 //Bebidas = Agua, Refrigerante , Sucos e qualquer coisa não alcoolica
 
 let inputMen = document.getElementById("men")
@@ -21,34 +23,36 @@ function calcular() {
     let timer = inputTimer.value
 
     let valuesMeat = meatFP(timer)
-    let womanMeat = valuesMeat[0] 
-    let menMeat = valuesMeat[1]
-    let childrenMeat = valuesMeat[2]
-    let menTotalMeat = men * menMeat
-    let womanTotalMeat = woman * womanMeat
+    let womanMeat = valuesMeat[0] * woman 
+    let menMeat = valuesMeat[1] * men
+    let childrenMeat = valuesMeat[2] * children    
 
     let valuesBeer = beerFP(timer)
-    let menBeer = valuesBeer[1]
-    let womanBeer = valuesBeer[0]
-    let menTotalBeer = men * menBeer
-    let womanTotalBeer = woman * womanBeer
+    let womanBeer = valuesBeer[0] * woman
+    let menBeer = valuesBeer[1] * men        
 
-    let meatTotal = menTotalMeat + womanTotalMeat + childrenMeat
-    let beerTotal = menTotalBeer + womanTotalBeer
-    let drinksTotal = drinksFP(timer) * men + (drinksFP(timer) / 2 * children)
+    let valuesDrinks = drinksFP(timer)
+    let womanDrinks = valuesDrinks[0] * woman 
+    let menDrinks = valuesDrinks[1] * men
+    let childrenDrinks = valuesDrinks[2] * children
+    
 
-    result.innerHTML = `<p>${meatTotal / 1000} Kg de Carne</p>`
-    result.innerHTML += `<p>${Math.ceil(beerTotal/350)} Latas de Cerveja</p>`
-    result.innerHTML += `<p>${Math.ceil(drinksTotal/2000)} Garrafas de Bebidas</p>`
+    let meatTotal = womanMeat + menMeat + childrenMeat
+    let beerTotal = womanBeer + menBeer
+    let drinksTotal = womanDrinks + menDrinks + childrenDrinks
+
+    result.innerHTML = `<p><img src="./images/meat.png" alt="">${meatTotal / 1000} Kg de Carne</p>`
+    result.innerHTML += `<p><img src="./images/beer.png" alt="">${Math.ceil(beerTotal/350)} Lata (as) de Cerveja</p>`
+    result.innerHTML += `<p><img src="./images/soft-drink.png" alt="">${Math.ceil(drinksTotal/2000)} Garrafa (as) de Bebida</p>`
     
 }
 
 function meatFP(timer){    
 
     if(timer >= 6){
-        womanMeat = 700
-        menMeat = 1000
-        childrenMeat = 500
+        womanMeat = 800
+        menMeat = 1400
+        childrenMeat = 600
         return [womanMeat,menMeat,childrenMeat]
     }
     else{
@@ -62,7 +66,7 @@ function meatFP(timer){
 function beerFP(timer){    
     if(timer >= 6){
         womanBeer = 1800
-        menBeer = 2200
+        menBeer = 2500
         return [womanBeer,menBeer]
     }
     else{
@@ -86,3 +90,4 @@ function drinksFP(timer){
         return [womanDrinks,menDrinks,childrenDrinks]
     }
 }
+

@@ -11,7 +11,7 @@ body{
 .container{
     font-family: Arial, Helvetica, sans-serif;
     max-width: 700px;
-    height: 700px;
+    height: auto;
     margin: 2rem auto;
     background-color: aliceblue;
     padding: 20px;
@@ -74,22 +74,25 @@ footer{
     text-align: center;
 }
 
+.container #result{    
+    display: flex;
+    flex-direction: column;
+}
+
+.container #result img{
+    transform: translateY(10px);
+    align-self: flex-start;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px; 
+}
+
 .container #result p{
     margin-top: 15px;
     font-size: 25px;
     font-family: 'Architects Daughter', cursive;
     color: white;
-}
-
-@media screen and (max-width:405px){
-    .container h1{
-        font-size: 2.25rem;
-    }
-
-    .container #result p{
-        font-size: 1.7rem;
-        margin-top: 20px;        
-    }
 }
 
 .flex-container{
@@ -121,3 +124,14 @@ footer{
     height: 50px;
 }
 
+/*Media Queries*******************************/
+@media screen and (max-width:405px){
+    .container h1{
+        font-size: 2.25rem;
+    }
+
+    .container #result p{
+        font-size: 1.7rem;
+        margin-top: 20px;        
+    }
+}
